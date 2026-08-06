@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CNH do Brasil - Dashboard</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Ajuste do layout geral */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #F4F4F4;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Contêiner da imagem no rodapé */
+        .bottom-image-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 16px 0;
+            margin-top: auto; /* Garante que fique fixada na parte inferior */
+        }
+
+        /* Imagem redimensionada para um tamanho menor */
+        .bottom-img {
+            width: 800px; /* Tamanho reduzido e ideal para o rodapé */
+            max-width: 80%; /* Ajuste de segurança para telas muito pequenas */
+            height: auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo escuro quando o menu estiver aberto -->
+    <div class="overlay" id="overlay" onclick="toggleMenu()"></div>
+
+    <!-- Menu Lateral (Sidebar) -->
+    <aside class="sidebar" id="sidebar">
+
+        <!-- Cabeçalho do Menu -->
+        <div class="sidebar-header">
+            <div class="sidebar-logo-container">
+                <img src="../static/8.jpeg" alt="Logo CNH" class="sidebar-logo-img">
+            </div>
+            <div class="user-info">
+                <h3>THIAGO DE LIMA ROCHA</h3>
+                <p>153.042.116-00</p>
+            </div>
+        </div>
+
+        <!-- Links do Menu -->
+        <nav class="sidebar-menu">
+            <ul>
+                <li><a href="#"><i class="fa-regular fa-envelope"></i> Central de Mensagens</a></li>
+                <li><a href="#"><i class="fa-solid fa-building-columns"></i> Política de Privacidade</a></li>
+                <li><a href="#"><i class="fa-regular fa-id-card"></i> Termo de Responsabilidade</a></li>
+                <li><a href="#"><i class="fa-regular fa-face-smile"></i> Avaliar</a></li>
+
+                <hr class="menu-divider">
+
+                <li><a href="#"><i class="fa-solid fa-gear"></i> Preferências</a></li>
+                <li><a href="#"><i class="fa-regular fa-book-open"></i> Tutorial</a></li>
+                <li><a href="#"><i class="fa-regular fa-circle-question"></i> Assistente Virtual</a></li>
+                <li><a href="#"><i class="fa-solid fa-circle-info"></i> Sobre a CDT</a></li>
+
+                <hr class="menu-divider">
+
+                <li><a href="../index.html" class="logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Sair da conta</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Barra Superior -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <div class="menu-icon" onclick="toggleMenu()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <span class="app-title">CNH do Brasil</span>
+        </div>
+        <div class="top-bar-right">
+            <span class="notification-icon">🔔</span>
+            <div class="user-avatar-text">T</div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="main-content">
+        <div class="card-container">
+
+            <a href="../templates/condutor.html" class="card-link">
+                <img src="../static/4.jpeg" alt="Condutor" class="card-img">
+            </a>
+
+            <a href="../templates/veiculos.html" class="card-link">
+                <img src="../static/5.jpeg" alt="Veículos" class="card-img">
+            </a>
+
+            <a href="../templates/infracoes.html" class="card-link">
+                <img src="../static/6.jpeg" alt="Infrações" class="card-img">
+            </a>
+
+            <a href="#" class="card-link">
+                <img src="../static/7.jpeg" alt="Educação" class="card-img">
+            </a>
+
+        </div>
+
+        <!-- Imagem 14.jpeg centralizada e menor no rodapé -->
+        <div class="bottom-image-container">
+            <img src="../static/14.jpeg" alt="Logos do Governo" class="bottom-img">
+        </div>
+    </main>
+
+    <script>
+        function toggleMenu() {
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>

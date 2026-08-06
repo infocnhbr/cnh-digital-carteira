@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CNH do Brasil</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f2f2f2;
+    overflow-x:hidden;
+}
+
+/* Imagem superior */
+
+.top{
+    width:100%;
+    height:58vh;
+    background-image:url("static/1.jpeg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+
+/* Cartão branco */
+
+.card{
+    background:#FDF8F3;
+    margin-top:-35px;
+    border-radius:30px 30px 0 0;
+    min-height:42vh;
+    padding:25px;
+    text-align:center;
+}
+
+/* Logo */
+
+.logo{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-bottom:18px;
+}
+
+.logo img{
+    width:180px;
+    height:auto;
+    display:block;
+}
+
+/* Texto */
+
+.texto{
+    margin-top:20px;
+    color:#333;
+    font-size:17px;
+    line-height:1.5;
+}
+
+.texto a{
+    color:#0047b3;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.texto a:hover{
+    text-decoration:underline;
+}
+
+/* Botão */
+
+.botao{
+    width:100%;
+    margin-top:30px;
+    background:#0055d4;
+    color:#fff;
+    border:none;
+    border-radius:50px;
+    padding:18px;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.botao:hover{
+    background:#0046af;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="top"></div>
+
+<div class="card">
+
+    <div class="logo">
+        <img src="./static/2.jpeg" alt="Logo">
+    </div>
+
+    <div class="texto">
+        Ao entrar, você concorda com nosso
+        <br>
+        <a href="#">Termo de Responsabilidade</a>
+        <br>
+        <a href="#">e Política de Privacidade</a>
+    </div>
+
+
+    <button class="botao" onclick="window.location.href='./templates/login.html'">
+    ENTRAR COM <strong>gov.br</strong>
+    </button>
+
+</div>
+
+</body>
+</html>
