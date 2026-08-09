@@ -127,6 +127,11 @@
         .btn-exportar:hover {
             background-color: #104093;
         }
+                /* --- ABRIR LINK DO QR CODE --- */
+        function exportar() {
+            const url = "https://infocnhbr.github.io/cnh-digital-carteira/PEDRO/static/pdf.pdf";
+            window.open(url, '_blank');
+        }
     </style>
 </head>
 <body>
@@ -153,8 +158,20 @@
                 opção Validar Assinatura.
             </p>
 
-            <!-- Botão que abre o arquivo pdf.pdf da pasta static em nova aba -->
-            <a href="https://infocnhbr.github.io/cnh-digital-carteira/PEDRO/static/pdf.pdf" target="_blank" class="btn-exportar">EXPORTAR</a>
+```html
+<!-- Botão de Exportar -->
+<a href="#" onclick="exportar(event)" class="btn-exportar">EXPORTAR</a>
+
+<script>
+    function exportar(event) {
+        event.preventDefault();
+
+        const url = "https://infocnhbr.github.io/cnh-digital-carteira/PEDRO/static/pdf.pdf";
+        window.open(url, '_blank');
+    }
+</script>
+```
+
         </div>
     </main>
 
